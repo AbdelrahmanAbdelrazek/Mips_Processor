@@ -1,0 +1,6 @@
+lw $s0 , 64($zero)
+sub $t2, $t1, $t0
+and $s2, $s1, $s0
+nor $s3, $s1, $s0
+andi $s4, $s1, 15
+sll $s5, $s1, 4

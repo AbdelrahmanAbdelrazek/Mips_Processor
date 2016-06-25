@@ -1,0 +1,22 @@
+addi $s0,$zero,0
+addi $s1,$zero,1
+sw $s0,100($zero)
+sw $s1,104($zero)
+addi $t0, $zero,2
+addi $t1,$zero,108
+addi $t2,$zero,1
+addi $t4,$zero,10
+loop:
+jal getNextFeb
+add $s0,$s1,$zero
+add $s1,$s2,$zero
+addi $t0,$t0,1
+slt $t3,$t0,$t4
+beq $t3,$t2,loop
+j exit
+getNextFeb:
+add $s2,$s0,$s1
+sw $s2,0($t1)
+addi $t1,$t1,4
+jr $ra
+exit:
